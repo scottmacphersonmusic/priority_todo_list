@@ -1,0 +1,6 @@
+<h2>These todos don't have a list yet!</h2>
+<ul>
+  <% @todos.each do |todo| %>
+    <li><%= todo.body %>  ~  <%= todo.priority %></li>
+  <% end %>
+</ul>
