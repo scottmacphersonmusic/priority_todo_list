@@ -1,0 +1,7 @@
+<h3>Edit ToDo</h3>
+
+<%= render partial: 'form', locals: { button_text: 'Update ToDo' } %>
+
+<br/>
+
+<%= link_to 'Delete ToDo', list_todo_path(@list, @todo), method: :delete, data: { confirm: 'Really?' } %>

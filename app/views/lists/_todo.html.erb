@@ -1,3 +1,4 @@
 <li>
-  <%= todo.body %>  ~  <%= todo.priority %>
+  <%= link_to(todo.body, edit_list_todo_path(@list, todo)) %> ~
+  <%= todo.priority %>
 </li>

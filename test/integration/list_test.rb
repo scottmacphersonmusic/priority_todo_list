@@ -1,7 +1,7 @@
 require "test_helper"
 
 class ListIntegrationTest < Capybara::Rails::TestCase
-  test 'create_list' do
+  test 'can create list' do
     visit root_path
     click_on 'New List'
     fill_in 'Name', with: 'Hiking Destinations'
@@ -28,7 +28,7 @@ class ListIntegrationTest < Capybara::Rails::TestCase
     lists_count = List.count
 
     visit list_path(list)
-    click_on "Delete"
+    click_on 'Delete'
 
     refute page.has_content?('Hiking Destinations')
     assert page.has_content?('List Successfully Deleted')

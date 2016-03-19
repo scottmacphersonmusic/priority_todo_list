@@ -1,0 +1,15 @@
+<%= form_for [@list, @todo] do |f| %>
+  <%= f.label :body, 'ToDo' %>
+  <%= f.text_field :body %>
+
+  <%= f.label :priority %>
+  <%= f.select(:priority,
+               [['0', 0],
+                ['1', 1],
+                ['2', 2],
+                ['3', 3],
+                ['4', 4],
+                ['5', 5]]) %>
+
+  <%= f.submit button_text %>
+<% end %>

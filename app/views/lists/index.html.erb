@@ -2,10 +2,6 @@
 
 <ul>
   <% @lists.each do |list| %>
-    <h2><%= list.name %></h2>
-    <ul>
-      <%= render partial: 'todo',
-          collection: list.todos.order(priority: :desc) %>
-    </ul>
+    <h2><%= link_to(list.name, list) %></h2>
   <% end %>
 </ul>
