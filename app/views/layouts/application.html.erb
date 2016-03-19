@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: name %>
+  <% end %>
+
   <h1>Priority List</h1>
+
   <%= yield %>
 </body>
 </html>
