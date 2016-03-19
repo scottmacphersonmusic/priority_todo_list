@@ -1,8 +1,5 @@
-# Read about fixtures at
-# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+shopping:
+  name: My Shopping List
 
-one:
-  name: MyString
-
-two:
-  name: MyString
+goals:
+  name: My Goals

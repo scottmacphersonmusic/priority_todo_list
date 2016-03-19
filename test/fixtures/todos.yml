@@ -1,7 +1,29 @@
-room:
-  body: Clean my room
+toothpaste:
+  body: Toothpaste
   priority: 2
+  list: shopping
 
-health:
-  body: Pay my health insurance bill
+bacon:
+  body: Bacon
   priority: 5
+  list: shopping
+
+reeds:
+  body: Reeds
+  priority: 1
+  list: shopping
+
+run:
+  body: Run 8 miles
+  priority: 2
+  list: goals
+
+practice:
+  body: Practice 2 hours per day
+  priority: 4
+  list: goals
+
+code:
+  body: Make at least one commit every day
+  priority: 5
+  list: goals
