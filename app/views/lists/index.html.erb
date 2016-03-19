@@ -1,0 +1,9 @@
+<ul>
+  <% @lists.each do |list| %>
+    <h2><%= list.name %></h2>
+    <ul>
+      <%= render partial: 'todo',
+          collection: list.todos.order(priority: :desc) %>
+    </ul>
+  <% end %>
+</ul>
