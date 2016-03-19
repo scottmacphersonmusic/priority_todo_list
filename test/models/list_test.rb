@@ -1,11 +1,8 @@
 require "test_helper"
 
 class ListTest < ActiveSupport::TestCase
-  def list
-    @list ||= List.new
-  end
-
-  def test_valid
-    assert list.valid?
+  test 'validates name presence' do
+    list = List.new
+    assert_not list.valid?
   end
 end
