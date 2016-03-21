@@ -1,5 +1,17 @@
-<ul>
+<div class="container-fluid">
   <% @lists.each do |list| %>
-    <h2><%= link_to(list.name, list) %></h2>
+    <div class="col-md-4">
+      <h2><%= link_to(list.name, list) %></h2>
+      <ul class="list-group">
+        <% list.top_three_todos.each do |todo| %>
+
+          <li class="list-group-item">
+            <span class="badge"><%= todo.priority %></span>
+            <%= todo.body %>
+          </li>
+
+        <% end %>
+      </ul>
+    </div>
   <% end %>
-</ul>
+</div>
