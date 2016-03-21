@@ -2,9 +2,7 @@
 By [Scott Macpherson](https://github.com/scottmacphersonmusic)
 
 ### Description
-Make as many lists as you want and oragnize their items by priority.
-
-
+Make as many lists as you want and organize their items by priority.
 
 ### Contributing
 1. Fork It
