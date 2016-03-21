@@ -9,7 +9,7 @@ class TodosController < ApplicationController
     @todo = @list.todos.build(todo_params)
 
     if @todo.save
-      flash[:notice] = 'ToDo Successfully Created'
+      flash[:success] = 'ToDo Successfully Created'
       redirect_to @list
     else
       flash.now[:error] = 'There was a problem creating your ToDo'
@@ -22,7 +22,7 @@ class TodosController < ApplicationController
 
   def update
     if todo.update_attributes(todo_params)
-      flash[:notice] = 'ToDo Successfully Updated'
+      flash[:success] = 'ToDo Successfully Updated'
       redirect_to @list
     else
       flash.now[:error] = 'There was a problem updating your ToDo'
@@ -32,7 +32,7 @@ class TodosController < ApplicationController
 
   def destroy
     todo.destroy
-    flash[:notice] = 'ToDo Successfully Deleted'
+    flash[:success] = 'ToDo Successfully Deleted'
     redirect_to @list
   end
 

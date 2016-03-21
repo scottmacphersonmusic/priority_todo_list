@@ -12,7 +12,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
 
     if @list.save
-      flash[:notice] = 'List Successfully Created'
+      flash[:success] = 'List Successfully Created'
       redirect_to @list
     else
       flash.now[:error] = 'There was a problem creating your list'
@@ -28,7 +28,7 @@ class ListsController < ApplicationController
 
   def update
     if list.update_attributes(list_params)
-      flash[:notice] = 'List Successfully Updated'
+      flash[:success] = 'List Successfully Updated'
       redirect_to list
     else
       flash.now[:error] = 'There was a problem updating your list'
@@ -38,7 +38,7 @@ class ListsController < ApplicationController
 
   def destroy
     list.destroy
-    flash[:notice] = 'List Successfully Deleted'
+    flash[:success] = 'List Successfully Deleted'
     redirect_to lists_path
   end
 
