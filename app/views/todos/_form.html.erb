@@ -1,6 +1,6 @@
 <%= form_for [@list, @todo], html: { class: 'form-inline' } do |f| %>
 
-  <%= render partial: 'errors' %>
+  <%= render partial: 'shared/errors', locals: { resource: @todo, name: 'ToDo' } %>
 
   <div class='form-group'>
     <%= f.label :body, 'ToDo', class: 'sr-only' %>
@@ -14,7 +14,8 @@
                   ['2', 2],
                   ['3', 3],
                   ['4', 4],
-                  ['5', 5]], {}, class: 'form-control') %>
+                  ['5', 5]],
+                 {}, class: 'form-control') %>
   </div>
   <%= f.submit button_text, class: 'btn btn-success' %>
 <% end %>
