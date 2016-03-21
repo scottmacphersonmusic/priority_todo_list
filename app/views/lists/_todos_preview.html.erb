@@ -1,0 +1,8 @@
+<ul class="list-group">
+  <% list.top_three_todos.each do |todo| %>
+    <li class="list-group-item">
+      <span class="badge"><%= todo.priority %></span>
+      <%= todo.body %>
+    </li>
+  <% end %>
+</ul>

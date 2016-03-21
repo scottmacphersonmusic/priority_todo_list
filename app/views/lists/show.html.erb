@@ -1,11 +1,27 @@
-<h2><%= @list.name %></h2>
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Delete', @list, method: :delete, data: { confirm: 'Really?' } %>
-<hr/>
-
-<%= link_to 'New ToDo', new_list_todo_path(@list) %>
-
-<ul>
-  <%= render partial: 'todo',
-  collection: @list.todos.order(priority: :desc) %>
-</ul>
+<div class="container">
+  <div class="row"
+    <div class="col-md-4">
+      <h2><%= @list.name %></h2>
+      <%= link_to 'Edit', edit_list_path(@list), class: 'btn btn-default' %>
+      <%= link_to('Delete', @list,
+                  method: :delete,
+                  data: { confirm: 'Really?' },
+                  class: 'btn btn-default') %>
+      <%= link_to('New ToDo', new_list_todo_path(@list),
+                  class: 'btn btn-default') %>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group">
+        <% @list.todos.order(priority: :desc).each do |todo| %>
+          <li class="list-group-item">
+            <span class="badge"><%= todo.priority %></span>
+            <%= link_to(todo.body, edit_list_todo_path(@list, todo)) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
