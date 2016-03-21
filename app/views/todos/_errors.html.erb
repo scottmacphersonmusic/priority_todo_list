@@ -1,0 +1,11 @@
+<% if @todo.errors.any? %>
+  <h2>
+    <%= pluralize(@todo.errors.count, "error") %> prohibited this ToDo from being saved:
+  </h2>
+
+  <ul>
+    <% @todo.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>

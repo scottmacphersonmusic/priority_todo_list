@@ -1,27 +1,20 @@
-<%= form_for [@list, @todo] do |f| %>
-  <% if @todo.errors.any? %>
-    <h2>
-      <%= pluralize(@todo.errors.count, "error") %> prohibited this ToDo from being saved:
-    </h2>
+<%= form_for [@list, @todo], html: { class: 'form-inline' } do |f| %>
 
-    <ul>
-      <% @todo.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <%= render partial: 'errors' %>
 
-  <%= f.label :body, 'ToDo' %>
-  <%= f.text_field :body %>
-
-  <%= f.label :priority %>
-  <%= f.select(:priority,
-               [['0', 0],
-                ['1', 1],
-                ['2', 2],
-                ['3', 3],
-                ['4', 4],
-                ['5', 5]]) %>
-
-  <%= f.submit button_text %>
+  <div class='form-group'>
+    <%= f.label :body, 'ToDo', class: 'sr-only' %>
+    <div class='input-group'>
+      <div class='input-group-addon'>ToDo</div>
+      <%= f.text_field :body, class: 'form-control', placeholder: '...' %>
+    </div>
+    <%= f.select(:priority,
+                 [['0', 0],
+                  ['1', 1],
+                  ['2', 2],
+                  ['3', 3],
+                  ['4', 4],
+                  ['5', 5]], {}, class: 'form-control') %>
+  </div>
+  <%= f.submit button_text, class: 'btn btn-success' %>
 <% end %>
