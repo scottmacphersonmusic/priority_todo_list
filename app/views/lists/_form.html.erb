@@ -1,17 +1,16 @@
-<%= form_for @list do |f| %>
-  <% if @list.errors.any? %>
-    <h2>
-      <%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:
-    </h2>
+<%= form_for @list, html: { class: 'form-inline' } do |f| %>
 
-    <ul>
-      <% @list.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <!-- Errors -->
+  <%= render partial: 'errors' %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
+  <!-- New List -->
+  <div class='form-group'>
+    <%= f.label :name, class: 'sr-only' %>
+    <div class='input-group'>
+      <div class='input-group-addon'>Name</div>
+      <%= f.text_field :name, class: 'form-control', placeholder: '...' %>
+    </div>
+  </div>
+  <%= f.submit class: 'btn btn-primary' %>
+
 <% end %>
