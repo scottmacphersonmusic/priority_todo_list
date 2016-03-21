@@ -11,6 +11,9 @@ class TodosController < ApplicationController
     if @todo.save
       flash[:notice] = 'ToDo Successfully Created'
       redirect_to @list
+    else
+      flash.now[:error] = 'There was a problem creating your ToDo'
+      render :new
     end
   end
 
@@ -21,6 +24,9 @@ class TodosController < ApplicationController
     if todo.update_attributes(todo_params)
       flash[:notice] = 'ToDo Successfully Updated'
       redirect_to @list
+    else
+      flash.now[:error] = 'There was a problem updating your ToDo'
+      render :edit
     end
   end
 
